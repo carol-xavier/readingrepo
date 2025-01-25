@@ -1,0 +1,95 @@
+* {
+    border: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+.Header {
+    width: 100vw;
+    height: 15vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    position: fixed;
+    background-color: #dcbb96;
+}
+
+
+.Header h1 {
+    font-family: 'Cantora One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3vw;
+    /* top:2vh; tentar colocar o t[itulo mais para cima */
+}
+
+.Header button {
+    width:10vw;
+    height:4vh;
+    /* top: 8.3vh; */
+    background: #FFFFFF;
+    border-radius: 5vw;
+
+    justify-content: center;
+    align-items: center; /*are these align and justfy working? */
+    font-family:  "Cambo", serif;
+    font-size: 1.5vw;
+}
+
+.Footer {
+    width: 100vw;
+    height: 5vh;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+    position: fixed;
+    background-color: #dcbb96;
+}
+
+h3 {
+    font-family:  "Cambo", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vw;
+}
+
+
+.Body {
+    width: 100vw;
+    height:80vh;
+    top: 15vh;
+    left: 0;
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.BookContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.BookImage {
+    width: 12vw; /* Adjust the width to your desired size */
+    height: 12vw; /* Adjust the height to your desired size */
+    border-radius: 50%; /* This creates the circular shape */
+    object-fit: cover; /* Ensures the image fits within the given dimensions */
+    margin-left: 5vw;
+    margin-right: 5vw;   
+}
+
+
