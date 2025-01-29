@@ -62,6 +62,13 @@ h3 {
     font-size: 1.5vw;
 }
 
+p {
+    font-family:  "Cambo", serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vw;  
+}
+
 
 .Body {
     width: 100vw;
@@ -92,4 +99,26 @@ h3 {
     margin-right: 5vw;   
 }
 
+.BookPageBody {
+    top: 20vh;
+    left: 2vw;
+    position: absolute;
 
+    display: flex;
+    flex-direction: column;
+}
+
+.BookPageSummary {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center; 
+}
+
+.BookReview {
+    height: 70vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
