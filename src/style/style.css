@@ -5,20 +5,25 @@
     box-sizing: border-box;
   }
 
-.Header {
+  .Header {
     width: 100vw;
     height: 15vh;
-    top: 0;
+    top: 0; /* Ensures it stays at the very top */
     left: 0;
+    
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
     z-index: 1;
-    position: fixed;
+    position: fixed; /* Keeps it at the top even when scrolling */
     background-color: #dcbb96;
+    
+    position: fixed; /* Keep it at the top */
+    margin: 0; /* Prevent unintended margins */
+    padding: 0; /* Prevent unintended padding */
 }
-
 
 .Header h1 {
     font-family: 'Cantora One', sans-serif;
@@ -106,6 +111,24 @@ p {
 
     display: flex;
     flex-direction: column;
+}
+
+.BookTitle {
+    position: absolute; /* Places it inside .Header */
+    bottom: 0; /* Aligns with bottom of .Header */
+    left: 2vw; /* Aligns with the left margin */
+    
+    width: 30vw;
+    height: 5vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1vw;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    z-index: 2; /* Ensure it stays above .Header */
 }
 
 .BookPageSummary {
