@@ -9,10 +9,10 @@ export default function Header() {
 
     return (
         <div className="Header">
-           
-                <h1>Diário de Leitura</h1>
-                <button>sobre mim</button>
-            
+
+            <h1>Diário de Leitura</h1>
+            <button>sobre mim</button>
+
             {location.pathname === "/ficha-do-livro" ? (
                 <div className='BookTitle'>Titleeeeeeeeeeeeeeeeeee</div>
             ) : (<p></p>)}
