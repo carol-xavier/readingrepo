@@ -4,14 +4,13 @@ import Footer from "./Footer";
 import myGif from "./../assets/giphy.gif";
 
 export default function AboutPage() {
+    
     return (
         <div className="BookPageBody">
             <Header />
             <div>
                 <h3>Em construção</h3>
-                <Link to="/sobre-mim">
-                    <img src={myGif} alt="Animated GIF" />
-                </Link>
+                <img src={myGif} alt="Animated GIF" />
             </div>
             <Footer />
         </div>
