@@ -7,7 +7,6 @@ import "./../style/reset.css";
 import "./../style/style.css";
 
 export default function MainPage() {
-    console.log("Estou renderizando");
     // const [books, setBooks] = useState([]);
     // const URL = process.env.REACT_APP_API_URL
 

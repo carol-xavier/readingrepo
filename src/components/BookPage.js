@@ -1,65 +1,59 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 import Header from "./Header";
 import Footer from "./Footer";
+import Checkbox from "./Checkbox";
+import "./../style/reset.css";
+import "./../style/style.css";
 
 
 // Check if I need another className different from Body
 // Update Header to switch and add book title and reading dates
 
-function Checkbox() { /* It does not need to be dynamic like this once I have the info in the database */
-    const [selectedOptions, setSelectedOptions] = useState([]);
-
-    const options = ["Recomendo", "Não Recomendo", "Se você gosta de leitura densa, só vai!"];
-
-    const HandleChange = (event) => {
-        const { value, checked } = event.target;
-        if (checked) {
-            setSelectedOptions((prev) => [...prev, value]);
-        } else {
-            setSelectedOptions((prev) => prev.filter((option)))
-        }
-    }
-
-    return (
-        <div className="BookContent">
-            <p>Choose options:</p>
-            {options.map((option) => (
-                <label key={option}>
-                    <input
-                        type="checkbox"
-                        value={option}
-                        checked={selectedOptions.includes(option)}
-                        onChange={HandleChange}
-                    />
-                    {option}
-                </label>
-            ))}
-        </div>
-    )
-}
-
 export default function BookPage() {
+    const { bookId } = useParams();
+    const [book, setBook]= useState({})
+    const URL = process.env.REACT_APP_API_URL;
+
+    useEffect(() => {
+        if (!bookId) return;
+        
+        const promise = axios.get(`${URL}/ficha-do-livro/${bookId}`)
+        promise.then((response) => {
+            const { data } = response;
+            setBook(data);
+        });
+        promise.catch((err) => {
+            console.log(err);
+            alert("Não foi possível carregar os dados do livro.");
+        });
+    }, [bookId, URL])
+    
+    
+    const {title, author, publisher, year, pages, genre, my_category, nationality, summary, main_characters, citation } = book;
+
     return (
         <div className="BookPageBody">
             <Header />
             <div className="BookPageSummary">
                 <div>
-                    <p>Autor:</p>
-                    <p>Editora:</p>
-                    <p>Ano:</p>
-                    <p>Páginas:</p>
-                    <p>Gênero:</p>
-                    <p>Nacionalidade:</p>
+                    <p>Autor: {author}</p>
+                    <p>Editora: {publisher}</p>
+                    <p>Ano: {year} </p>
+                    <p>Páginas: {pages} </p>
+                    <p>Gênero: {genre} </p>
+                    <p>Nacionalidade: {nationality} </p>
                 </div>
-                <Checkbox />
+                <Checkbox checked={my_category || ""}/>
             </div>
             <div className="BookReview">
                 <h3>Resumo do Livro</h3>
-                {/*get info from database*/}
-                <p>Data Science from Zero" essentially refers to starting a journey to learn data science with no prior experience, meaning you would begin by acquiring fundamental knowledge in statistics, programming languages like Python, data manipulation techniques, and gradually progress to more advanced concepts like machine learning and data visualization to eventually analyze and extract meaningful insights from large datasets, all while building practical skills through projects and applications</p>
+                <p>{summary}</p>
                 <h3>Personagens Principais</h3>
+                {main_characters}
                 <h3>Citação Preferida</h3>
+                {citation}
             </div>
             <Footer />
         </div>

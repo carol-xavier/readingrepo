@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import axios from 'axios';
+import "./../style/reset.css";
+import "./../style/style.css";
 
 export default function Book() {
     const [books, setBooks] = useState([]);
-    const URL = process.env.REACT_APP_API_URL
+    const URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
-        console.log("Estou ativando a requisicao");
         const promise = axios.get(URL)
         promise.then((response) => {
             const { data } = response;
@@ -17,15 +18,18 @@ export default function Book() {
             alert("Deu ruim");
             console.log(err);
         });
-    }, [])
+    }, [URL])
 
     return (
         <div className='Body'>
             {
                 books.map(book => {
-                    const { img, title, author } = book;
+                    const { _id, img, title, author } = book;
                     return (
-                        <Link className="BookContent" to="/ficha-do-livro">
+                        <Link className="BookContent" 
+                            key={_id}
+                            to={`/ficha-do-livro/${_id}`}
+                            >
                             <img className="BookImage" src={img} />
                             <p>{title}</p>
                             <p>{author}</p>
@@ -34,5 +38,5 @@ export default function Book() {
                 })
             }
         </div>
-    )
+    );
 }

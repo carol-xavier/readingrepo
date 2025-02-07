@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './MainPage';
@@ -10,7 +9,7 @@ export default function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<MainPage />} />
-        <Route path="/ficha-do-livro" element={<BookPage />} />
+        <Route path="/ficha-do-livro/:bookId" element={<BookPage />} />
         <Route path="sobre-mim" element={<AboutPage />} />
       </Routes>
     </Router>
