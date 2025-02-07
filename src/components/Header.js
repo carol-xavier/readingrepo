@@ -4,7 +4,8 @@ import "./../style/style.css";
 
 
 
-export default function Header() {
+export default function Header(props) {
+    const { title = "", bookId } = props;
     const location = useLocation()
 
     return (
@@ -14,8 +15,8 @@ export default function Header() {
             <Link to="/sobre-mim">
                 <button>sobre mim</button>
             </Link>
-            {location.pathname === "/ficha-do-livro" ? (
-                <div className='BookTitle'>Titleeeeeeeeeeeeeeeeeee</div>
+            {location.pathname === `/ficha-do-livro/${bookId}` ? (
+                <div className='BookTitle'>{title}</div>
             ) : (<p></p>)}
         </div>
     );

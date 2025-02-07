@@ -7,18 +7,14 @@ import Checkbox from "./Checkbox";
 import "./../style/reset.css";
 import "./../style/style.css";
 
-
-// Check if I need another className different from Body
-// Update Header to switch and add book title and reading dates
-
 export default function BookPage() {
     const { bookId } = useParams();
-    const [book, setBook]= useState({})
+    const [book, setBook] = useState({})
     const URL = process.env.REACT_APP_API_URL;
 
     useEffect(() => {
         if (!bookId) return;
-        
+
         const promise = axios.get(`${URL}/ficha-do-livro/${bookId}`)
         promise.then((response) => {
             const { data } = response;
@@ -29,13 +25,16 @@ export default function BookPage() {
             alert("Não foi possível carregar os dados do livro.");
         });
     }, [bookId, URL])
-    
-    
-    const {title, author, publisher, year, pages, genre, my_category, nationality, summary, main_characters, citation } = book;
+
+
+    const { title, author, publisher, year, pages, genre, my_category, nationality, summary, main_characters, citation } = book;
 
     return (
         <div className="BookPageBody">
-            <Header />
+            <Header
+                title={title || ""}
+                bookId={bookId}
+            />
             <div className="BookPageSummary">
                 <div>
                     <p>Autor: {author}</p>
@@ -45,7 +44,7 @@ export default function BookPage() {
                     <p>Gênero: {genre} </p>
                     <p>Nacionalidade: {nationality} </p>
                 </div>
-                <Checkbox checked={my_category || ""}/>
+                <Checkbox checked={my_category || ""} />
             </div>
             <div className="BookReview">
                 <h3>Resumo do Livro</h3>
