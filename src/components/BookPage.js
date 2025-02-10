@@ -87,7 +87,7 @@ export default function BookPage() {
 }
 
 const BookPageBody = styled.div`
-    width: calc(100% - 2vw); ;
+    width: calc(100% - 2vw); 
     height:80vh;
     top: 18vh;
     left: 2vw;
@@ -112,7 +112,7 @@ const BookPageSummary = styled.div`
 `
 
 const BookReview = styled.div`
-    height: 65vh;
+    height: 60vh;
 
     display: flex;
     justify-content: space-evenly;

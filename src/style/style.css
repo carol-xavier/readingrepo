@@ -65,12 +65,3 @@ p {
     margin-left: 5vw;
     margin-right: 5vw;   
 }
-
-.BookPageBody {
-    top: 20vh;
-    left: 2vw;
-    position: absolute;
-
-    display: flex;
-    flex-direction: column;
-}
