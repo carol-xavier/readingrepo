@@ -1,12 +1,13 @@
-import { Link } from 'react-router-dom';
 import Header from "./Header";
 import Footer from "./Footer";
 import myGif from "./../assets/giphy.gif";
+import "./../style/reset.css";
+import "./../style/style.css";
 
 export default function AboutPage() {
     
     return (
-        <div className="BookPageBody">
+        <div className="Body">
             <Header />
             <div>
                 <h3>Em construção</h3>

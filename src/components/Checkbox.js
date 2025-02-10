@@ -7,7 +7,6 @@ export default function Checkbox(props) {
  
     return (
         <div className="BookContent">
-            <h3>Choose options:</h3>
             {options.map((option) => (
                 <label key={option}>
                     <input
