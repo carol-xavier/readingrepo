@@ -4,7 +4,7 @@ import axios from 'axios';
 import "./../style/reset.css";
 import "./../style/style.css";
 
-export default function Book() {
+export default function Book () {
     const [books, setBooks] = useState([]);
     const URL = process.env.REACT_APP_API_URL;
 
@@ -31,8 +31,8 @@ export default function Book() {
                             to={`/ficha-do-livro/${_id}`}
                             >
                             <img className="BookImage" src={img} />
-                            <p>{title}</p>
-                            <p>{author}</p>
+                            <h2>{title}</h2>
+                            <h2>{author}</h2>
                         </Link>
                     )
                 })
