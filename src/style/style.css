@@ -39,10 +39,10 @@ p {
 
 .Body {
     width: 100%;
-    height:80vh;
-    top: 15vh;
-    left: 0;
-    position: absolute;
+    min-height: calc(100vh - 20vh); 
+    margin-top: 15vh; 
+    padding-bottom: 7vh; 
+    position: relative;
 
     display: flex;
     justify-content: space-between;
