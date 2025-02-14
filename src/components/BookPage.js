@@ -89,7 +89,7 @@ export default function BookPage() {
 const BookPageBody = styled.div`
     width: calc(100% - 2vw); 
     height:80vh;
-    top: 18vh;
+    top: 22vh;
     left: 2vw;
     position: absolute;
 `

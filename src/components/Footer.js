@@ -29,5 +29,5 @@ const FooterBox = styled.div`
     gap: 1vw;
     z-index: 1;
     position: fixed;
-    background-color: #dcbb96;
+    background-color: #ef9c77;
 `

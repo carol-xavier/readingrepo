@@ -1,30 +1,33 @@
 import { useLocation, Link } from 'react-router-dom';
+import header_pic from './../assets/evening.jpg';
 import styled from 'styled-components';
 import "./../style/reset.css";
 import "./../style/style.css";
 
 
 
-export default function Header (props) {
+export default function Header(props) {
     const { title = "", bookId } = props;
     const location = useLocation()
 
     return (
-        <HeaderBox>
-            <h1>Diário de Leitura</h1>
-            <Link to="/sobre-mim">
-                <Button>sobre mim</Button>
-            </Link>
-            {location.pathname === `/ficha-do-livro/${bookId}` ? (
-                <BookTitle>{`      ${title}`}</BookTitle>
-            ) : (<p></p>)}
-        </HeaderBox>
+    
+            <HeaderBox>
+                <h1>Diário de Leitura</h1>
+                <Link to="/sobre-mim">
+                    <Button>sobre mim</Button>
+                </Link>
+                {location.pathname === `/ficha-do-livro/${bookId}` ? (
+                    <BookTitle>{`      ${title}`}</BookTitle>
+                ) : (<p></p>)}
+            </HeaderBox>
+        
     );
 }
 
 const HeaderBox = styled.div`
     width: 100%;
-    height: 15vh;
+    height: 20vh;
     top: 0; 
     left: 0;
     
@@ -35,12 +38,15 @@ const HeaderBox = styled.div`
     
     z-index: 1;
     position: fixed;
-    background-color: #dcbb96;
+    background-image: url(${header_pic});
+    background-size: cover; 
+    background-position-y: 36%;
     
     position: fixed; 
     margin: 0; 
     padding: 0; 
 `
+
 const Button = styled.button`
     width:10vw;
     height:4vh;
@@ -51,9 +57,9 @@ const Button = styled.button`
 `
 
 const BookTitle = styled.div`
-    position: absolute; /* Places it inside .Header */
-    bottom: 0; /* Aligns with bottom of .Header */
-    left: 2vw; /* Aligns with the left margin */
+    position: absolute;
+    bottom: 2vh; 
+    left: 1vw;
     
     width: 30vw;
     height: 5vh;
@@ -65,7 +71,7 @@ const BookTitle = styled.div`
     justify-content: flex-start;
     align-items: center;
     
-    z-index: 2; /* Ensure it stays above .Header */
+    z-index: 2; 
     white-space: pre-wrap;
 
     font-family: 'Cantora One', sans-serif;
