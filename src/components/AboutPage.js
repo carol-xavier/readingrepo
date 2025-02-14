@@ -14,7 +14,7 @@ export default function AboutPage() {
             <Profile>
                 <img className="BookImage" src={profile_pic} alt="Picture of myself" />
                 <Text>
-                    Eu sou mais conhecida como Carol, já cheguei na casa dos 30. Nasci em São Textaulo, mas mudei para Fortaleza quando eu tinha 9 anos e costumo dizer que sou
+                    Eu sou mais conhecida como Carol, já cheguei na casa dos 30. Nasci em São Paulo, mudei para Fortaleza quando eu tinha 9 anos e costumo dizer que sou
                     Fortalezense de coração. No meu tempo livre, eu adoro ir ao teatro, cinema, lugares com boa música, praia e encontrar os amigos.
                     Também é fácil me encontrar praticando crossfit. Eu me formei em Biotecnologia pela Universidade Federal do Ceará em 2017.
                     Em 2017 mesmo, eu me mudei pros EUA para me desenvolver na área de pesquisa em biotecnologia animal na Utah State. Foi muito bacana, eu aprendi muito sobre

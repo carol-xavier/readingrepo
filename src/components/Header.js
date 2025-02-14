@@ -67,4 +67,9 @@ const BookTitle = styled.div`
     
     z-index: 2; /* Ensure it stays above .Header */
     white-space: pre-wrap;
+
+    font-family: 'Cantora One', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6vw;
 `
