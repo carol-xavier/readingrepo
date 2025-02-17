@@ -64,12 +64,3 @@ label {
     flex-direction: column;
     padding: 2%;
 }
-
-.BookImage {
-    width: 12vw; /* Adjust the width to your desired size */
-    height: 12vw; /* Adjust the height to your desired size */
-    border-radius: 50%; /* This creates the circular shape */
-    object-fit: cover; /* Ensures the image fits within the given dimensions */
-    margin-left: 5vw;
-    margin-right: 5vw;   
-}
